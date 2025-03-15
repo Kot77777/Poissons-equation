@@ -1,0 +1,3 @@
+[submodule "third_party/System_of_equations"]
+	path = third_party/System_of_equations
+	url = git@github.com:Kot77777/System_of_equations.git
