@@ -2,14 +2,7 @@
 #include "create_system.h"
 #include "primitives/CSR_matrix.h"
 #include "solution_SLAE/method_Gauss_Seidel.h"
-
-const auto phi = [](const double x, const double y) {
-  return sin(x);
-};
-
-const auto f = [](const double x, const double y) {
-    return -sin(x);
-};
+#include "functions.h"
 
 TEST(create_system, system) {
     const std::size_t N = 5;
@@ -17,9 +10,9 @@ TEST(create_system, system) {
     const CSR_matrix<double> A{slae.A_};
     const Vector<double> b{slae.b_};
     const Vector<double> x_0{(N - 2) * (N - 2)};
-    const double eps = 10e-15;
+    const double eps = 1e-12;
 
-    const Vector<double> res = method_Gauss_Seidel(A, b, x_0, 1000, eps);
+    const Vector<double> res = method_Gauss_Seidel(A, b, x_0, 10000, eps);
 
     for (std::size_t i = 0; i < (N - 2) * (N - 2); ++i) {
         for (std::size_t j = 0; j < (N - 2) * (N - 2); ++j) {

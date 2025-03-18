@@ -5,7 +5,7 @@
 
 template<typename T>
 struct SLAE {
-    CSR_matrix<double> A_;
+    CSR_matrix<T> A_;
     Vector<T> b_;
 };
 
