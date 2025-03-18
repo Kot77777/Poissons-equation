@@ -5,7 +5,7 @@
 template<typename T, typename Callable_1, typename Callable_2>
 SLAE<T> system(const std::size_t N, const Callable_1 &f0, const Callable_2 &phi0) {
 
-    const T h = 1. / (N + 2);
+    const T h = 1. / (N + 1);
     const T h_kv = h * h;
 
     const auto phi = [&phi0, h](const std::size_t j, const std::size_t i) {

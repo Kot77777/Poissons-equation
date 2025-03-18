@@ -8,7 +8,7 @@ template<typename T>
 T get_err(const Vector<T> &vec, const std::size_t N){
     T large{};
     T diff{};
-    const T step = 1. / (N + 2);
+    const T step = 1. / (N + 1);
     for (std::size_t i = 1; i <= N; ++i) {
         for (std::size_t j = 1; j <= N; ++j) {
             diff = fabs(vec((i - 1) * N + (j - 1)) - sin(j * step));

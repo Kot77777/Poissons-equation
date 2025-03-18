@@ -5,7 +5,7 @@
 #include "functions.h"
 
 TEST(create_system, system) {
-    const std::size_t N = 5;
+    const std::size_t N = 4;
     const SLAE<double> slae = system<double>(N - 2, f, phi);
     const CSR_matrix<double> A{slae.A_};
     const Vector<double> b{slae.b_};
